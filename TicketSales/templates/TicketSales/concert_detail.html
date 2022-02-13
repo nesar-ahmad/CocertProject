@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} {{concert_detail}} {% endblock title %}
+
+{% block titlePage %}جزییات {{concert_detail.name}}{% endblock titlePage %}
+
+{% block mainContent %} 
+  <div class="col-md-9">
+    <h3>نام کنسرت: {{concert_detail.name}}</h3>
+    <h3>نام خواننده: {{concert_detail.singer_name}}</h3>      
+    <h3>مدت زمان اجراء: {{concert_detail.length}} دقیقه</h3>      
+  </div>
+  <div class="col-md-3">
+    <div class="imageBox">
+      <img src="{{ concert_detail.image.url }}" alt="no image">
+    </div>
+    <div class="btn btn-outline-info">
+      <a href="{% url 'TicketSales:concert_edit' concert_detail.pk %}">ویرایش کنسرت</a>
+      <li class="fas fa-edit"></li>
+    </div>
+  </div>   
+{% endblock mainContent %}
+    

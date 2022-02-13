@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}ویرایش پروفایل{% endblock title %}
+
+{% block titlePage %}
+  ویرایش پروفایل
+{% endblock titlePage %}
+
+{% block mainContent %} 
+
+  <div class="row">
+    <div class="col-md-12 m-5" style="text-align: center;">
+      <h3>ویرایش پروفایل {{ user }}</h3>
+    </div>
+  </div>
+
+  <form class="form" style="margin-top: 1.3em;" 
+    action="" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-8">
+        {{ user_edit_form.as_p }}
+        {{ profiel_edit_form.as_p }}
+      </div>
+      <div class="col-md-4">
+        <div class="imageBox">
+          <img src="{{ profile_edit_img.url }}" alt="">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="save btn btn-outline-info mb-3">
+      ثبت تغییرات<i class="fas fa-edit"></i>
+    </button>
+
+  </form>
+
+{% endblock mainContent %}
+    

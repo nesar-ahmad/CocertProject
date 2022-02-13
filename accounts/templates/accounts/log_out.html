@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Logout{% endblock title %}
+
+{% block titlePage %}
+  <p><strong>خارج شدید</strong></p>
+{% endblock titlePage %}
+
+{% block mainContent %} 
+  <div class="col-md-6">
+    <p>از شما ممنون هستیم که زمان با ارزش خود را برای این تارنما امروز صرف کرده اید.</p>
+    <p><a class="log_out" href="{% url 'accounts:log_in' %}">ورود دوباره</a></p>
+  </div>
+{% endblock mainContent %}
+    

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+<!-- {% load jalali_tags %} -->
+
+{% block title %}لیست سانس ها{% endblock title %}
+
+{% block titlePage %} زمان برگزاری کنسرت ها{% endblock titlePage %}
+
+{% block mainContent %}
+  
+  {% if time_list %}
+    {% for time in time_list %}
+      <div class="col-sm-4 col-md-2 time">
+        <!-- <a href=""> -->
+          <div class="timeBox">
+            <h5>نام کنسرت: {{time.concert.name}}</h5>
+            <p>نام خواننده: {{time.concert.singer_name}}</p>
+            <p>نام سالن: {{time.location.name}}</p>
+            <!-- <p>زمان شروع: {{time.start_date_time|to_jalali:'%y/%m/%d  %H:%M:%S'}}</p> -->
+            <p>زمان شروع: {{ time.get_jalali_date }}</p>
+            <p>تعداد صندلی: {{time.seat}} </p>       
+            <div class="
+                      {% if time.status == time.start %}
+                        btn default
+                      {% elif time.status == time.end %}
+                        btn btn-danger
+                      {% elif time.status == time.cancel %}
+                        btn btn-warning
+                      {% elif time.status == time.sales %}
+                        btn btn-success
+                      {% endif %}
+                      ">
+              {{time.get_status_display}}
+            </div>    
+          </div>
+        <!-- </a> -->
+      </div>
+    {% endfor %} 
+  {% else %}
+    هنوز هیچ زمان برای برگزاری کنسرت هاثبت نشده است.
+  {% endif %}
+      
+{% endblock mainContent %}
+    
+    
+    

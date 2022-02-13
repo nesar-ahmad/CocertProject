@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block titlePage %}
+  <h1>ورود کاربران</h1>
+{% endblock titlePage %}
+
+{% block mainContent %} 
+
+  <div class="col-md-6">
+    <form action="" method="post" class="form">
+      {% csrf_token %}
+      <h3>اطلاعات کاربری خود را وارد کنید.</h3>
+      <p style="color: red;">{{username}} {{error_message}}</p>
+      <label for="username" class="label-control">نام کاربری:</label>
+      <input type="text" name="username" id="username" class="form-control">
+      <label for="password" class="label-control">رمز ورود:</label>
+      <input type="password" name="password" id="password" class="form-control">
+
+      <input type="submit" value="ورود" class="btn btn-success mt-1">
+    </form>
+  </div>
+  
+{% endblock mainContent %}
+    

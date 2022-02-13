@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}خوش آمدید{% endblock title %}
+
+{% block titlePage %}
+  <h1>خوش آمدید {{ user.first_name }}!</h1> 
+{% endblock titlePage %}
+
+{% block mainContent %}
+  <h1>خوش آمدید {{ user.first_name }}!</h1>
+  <p>حساب کاربری شما موفقانه ساخته شد. 
+   حالا شما می توانید <a href="{% url 'accounts:log_in' %}">ورود</a>.</p>
+{% endblock mainContent %}
+    
+    
+    

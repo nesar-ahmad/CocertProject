@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  ویرایش کنسرت
+{% endblock title %}
+
+{% block titlePage %}
+  
+{% endblock titlePage %}
+
+{% block mainContent %}
+  <form method="POST" class="mt-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-md-8">
+        <p>نام کنسرت: {{form.name}}</p>
+        <p>نام خواننده: {{form.singer_name}}</p>
+        <p>مدت زمان (دقیقه) : {{form.length}}</p>
+      </div>
+      <div class="col-md-4">
+        <div class="imageBox">
+          <img src="{{ concert.image.url }}" alt="">
+        </div>
+        <p>{{ form.image }}</p>
+      </div>
+    </div>
+    <button class="btn btn-outline-success" type="submit">
+      ذخیره تغییرات<i class="fas fa-edit" ></i></button>
+  </form>
+{% endblock mainContent %}
+  
+  
+    

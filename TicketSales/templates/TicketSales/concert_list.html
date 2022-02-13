@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}سامانه فروش بلیط کنسرت ها{% endblock title %}
+  
+{% block titlePage %}
+  لیست کنسرت ها
+{% endblock titlePage %}
+
+{% block mainContent %}
+  <form action="" method="get">
+    {{ searchform }}
+    <input type="submit" value="جستجو" class="btn btn-success">
+  </form>
+  {% for concert in concerts %}
+    <div class="col-sm-4 col-md-2">
+      <a href="{% url 'TicketSales:concert_detail' concert.id %}">
+        <div class="imageBox">
+          <img src="{{ concert.image.url }}" alt="no image">
+          {{ concert.name }}
+        </div>
+      </a>
+    </div>
+  {% empty %}
+    <p>هیچ کنسرت وجود ندارد.</p>  
+  {% endfor %}
+
+{% endblock mainContent %}
+  
+<!-- <h4>تعداد کنسرت ها: {{ concert_count }}</h4> -->
+
+  

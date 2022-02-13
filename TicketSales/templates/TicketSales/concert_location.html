@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} {{location}} {% endblock title %}
+
+{% block titlePage %}
+  لیست مکانهای برگزاری کنسرت ها
+{% endblock titlePage %}
+
+{% block mainContent %}
+
+  <div class="row locationHeader">
+    <div class="col-md-4">
+      <h3>نام سالن</h3>
+    </div>
+    <div class="col-md-8">
+      <h3>آدرس</h3>
+    </div>
+  </div>
+   
+  {% for loc in  location %}
+    <div class="row locationContent">
+      <div class="col-md-4">
+        {{loc.name}}
+      </div>
+      <div class="col-md-8">
+        {{loc.address}}
+      </div>
+    </div>
+  {% empty %}
+    هیچ مکانی هنوز ثبت نشده است 
+  {% endfor %}
+  
+{% endblock mainContent %}
+  
+  
+    

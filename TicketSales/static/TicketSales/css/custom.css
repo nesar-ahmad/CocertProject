@@ -1,0 +1,121 @@
+html {
+  direction: rtl;
+  height: 100%;
+}
+body {
+  padding-top: 56px;
+  height: 100%;
+  font-family: 'IranSanse';
+}
+.box {
+  text-align: center;
+  background-color:#12cfab;
+}
+.btnul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+.btnul li {
+  float: left;
+  margin-left: 10px;
+}
+.imageBox {
+  margin: 5px;
+  background-color: whitesmoke;
+  text-align: center;
+  font-size: 15px;
+  border: 1px dashed green;
+  padding: 10px;
+}
+.imageBox img{
+  max-width: 100%;
+  height: auto;
+}
+.locationHeader, .locationContent{
+  border: 2px dotted green;
+  margin-top: 5px;
+  padding: 10px;
+  margin-right: 0.5px;
+}
+.timeBox {
+  font-size: 15px;
+  background-color: whitesmoke;
+  border: 1px dashed green;
+  padding: 15px;
+  margin: 5px;
+  text-align: center;
+}
+.default {
+  border: 1px solid green;
+  background-color:lightblue;
+}
+.log_out {
+  text-decoration: none;
+}
+.border_row {
+  border: 1px dotted green;
+  margin: 10px;
+  padding: 20px;
+  margin-right: 0.5px;
+  font-size: 30px;
+}  
+
+/* 
+* {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+[class*="col-"] {
+  float: right;
+  padding: 15px;
+}
+[class*="col-"] {
+  width: 100%;
+}
+@media screen and (max-width:576) {
+  .col-xs-1 {width: 8.33%;}
+  .col-xs-2 {width: 16.66%;}
+  .col-xs-3 {width: 25%;}
+  .col-xs-4 {width: 33.33%;}
+  .col-xs-5 {width: 41.66%;}
+  .col-xs-6 {width: 50%;}
+  .col-xs-7 {width: 58.33%;}
+  .col-xs-8 {width: 66.66%;}
+  .col-xs-9 {width: 75%;}
+  .col-xs-10 {width: 83.33%;}
+  .col-xs-11 {width: 91.66%;}
+  .col-xs-12 {width: 100%;}
+}
+
+@media screen and (min-with:576) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media screen and (min-with:768) {
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+} */

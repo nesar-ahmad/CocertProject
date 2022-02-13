@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="{% static 'TicketSales/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'TicketSales/css/bootstrap.rtl.css' %}">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'TicketSales/css/fontawesome.min.css' %}">
+    <!-- base css -->
+    <link rel="stylesheet" href="{% static 'TicketSales/css/custom.css' %}">
+
+    <!-- Iran sanse fonts -->
+    <style>
+      @font-face {
+        font-family: 'IranSanse';
+        src: local('IranSanse'),
+        url("{% static 'TicketSales/fonts/FontsFree-Net-ir_sans.ttf' %}") format(ttf),
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row box"> 
+        <h1>{% block titlePage %} {% endblock titlePage %}</h1> 
+        <ul class="btnul">
+          
+          {% if user.is_authenticated %}
+            <!-- <p>سلام{{user}}، خوش آمدی.</p> -->
+            <li><a href="{% url 'accounts:profile' %}" class="btn btn-primary">پروفایل</a></li>
+            <li><a href="{% url 'accounts:log_out' %}" class="btn btn-primary">خروج</a></li>
+          {% else %}
+            <li><a href="{% url 'accounts:log_in' %}" class="btn btn-primary">ورود</a></li>
+            <li><a href="{% url 'accounts:register' %}" class="btn btn-primary">ثبت نام</a></li>
+          {% endif %}
+
+          <li><a href="{% url 'TicketSales:concert_list' %}" class="btn btn-success">صفحه اصلی</a></li>
+          <li><a href="{% url 'TicketSales:concert_location' %}" class="btn btn-danger">اطلاعات محل</a></li>
+          <li><a href="{% url 'TicketSales:time_list' %}" class="btn btn-primary">مشاهده همه سانس ها</a></li>
+        </ul> 
+      </div>
+      <div class="row">
+        {% block mainContent %} {% endblock mainContent %}
+      </div> 
+
+    </div>  
+  </body>
+  <script src="{% static 'TicketSales/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'TicketSales/js/bootstrap.bundle.js' %}"></script>
+  <!-- <script src="{% static 'TicketSales/js/fontawesome.js' %}"></script>   -->
+  <script src="{% static 'TicketSales/js/all.js' %}"></script>  
+  <script src="{% static 'TicketSales/js/custom.js' %}"></script>
+</html>
